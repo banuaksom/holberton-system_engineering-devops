@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%f\n" "NUM" | cut -c -4 
+printf "%f\n" $NUM | cut -c -4 
