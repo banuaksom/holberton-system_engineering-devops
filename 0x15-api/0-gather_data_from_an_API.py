@@ -3,12 +3,13 @@
 import requests
 from sys import argv
 
+
 if __name__ == "__main__":
-    req = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(argv[1])).json()
+    req = requests.get("https://jsonplaceholder.typicode.com/users/{}".
+                       format(argv[1])).json()
     EMPLOYEE_NAME = req.get("name")
-    print(EMPLOYEE_NAME)
-    req2 = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}".format(argv[1])).json()
-    print(req2)
+    req2 = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}".
+                        format(argv[1])).json()
     TASK_TITLE = []
     NUMBER_OF_DONE_TASKS = 0
     for i in req2:
@@ -20,5 +21,3 @@ if __name__ == "__main__":
           format(EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
     for task in TASK_TITLE:
         print("\t {}".format(task))
-
-
